@@ -545,6 +545,14 @@ transform: translateY(0%);
     
 }
 
+
+
+.footer-text-subscribe {
+    margin-bottom: 16px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
 .footer-input {
     display: flex;
     gap: 24px;
@@ -624,6 +632,7 @@ transform: translateY(0%);
         padding: 24px;
         transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
         padding: 72px 24px 24px 24px;
+        margin-bottom: 8px;
 
         
 }
@@ -635,10 +644,11 @@ transform: translateY(0%);
 
 }
 
-.modal-close-icon :hover,
-.modal-close-icon :focus {
+.modal-close-icon:hover,
+.modal-close-icon:focus #{
 fill: #ffffff
 }
+
 
 .modal-close {
     display: flex;
@@ -656,17 +666,14 @@ fill: #ffffff
         padding: 0;
         transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-        .modal-close :hover {
+    .modal-close:hover,
+    .modal-close:focus {
 
             border: none;
             background-color: #404bbf;
         }
        
-                .modal-close :focus {
-                    border: none;
-                    background-color: #404bbf;
-                }
-
+            
 
 .modal-text {
     font-weight: 500;
@@ -691,6 +698,7 @@ fill: #ffffff
         padding-right: 16px;
         border: 1px solid rgba(46, 47, 66, 0.4);
         transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        
             
         
 }
@@ -744,7 +752,7 @@ border-color: #4D5AE5;
     font-size: 12px;
     
         /* line-height: 14px; */
-        line-height: 1.16667;
+        line-height: 1.17;
         letter-spacing: 0.04em;
         color: #8E8F99;
         margin-bottom: 4px;
@@ -755,11 +763,12 @@ border-color: #4D5AE5;
 }
 
 .modal-field {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
 
 }
 .input-wraper {
     position: relative;
+    border: 1px solid rgba(46, 47, 66, 0.4);
 
 }
 
@@ -799,7 +808,7 @@ fill: #F4F4FD;
             color: #8E8F99;
             
             a {
-                /* line-height: 16px; */
+               
                     line-height: 1.33333;
                     text-decoration: underline;
                     text-decoration-skip-ink: none;
@@ -807,7 +816,7 @@ fill: #F4F4FD;
             }
     }
 
-    .model-check-box {
+    .modal-check-box {
         display: inline-flex;
         align-items: center;
         justify-content: center;
