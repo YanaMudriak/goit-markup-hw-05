@@ -618,9 +618,8 @@ transform: translateY(0%);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition:
-        opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .is-open {
@@ -628,347 +627,264 @@ transform: translateY(0%);
     visibility: visible;
     pointer-events: auto;
 }
+
 .modal {
-    position: absolute;
-top: 50%;
-left: 50%;
- transform: translate(-50%, -50%);
-width: 408px;
-  min-height: 584px;
-   background: #fcfcfc;
-   box-shadow:
-        0px 1px 1px rgba(0, 0, 0, 0.14),
-        0px 1px 3px rgba(0, 0, 0, 0.12),
-        0px 2px 1px rgba(0, 0, 0, 0.2);
-    /* ТЗ: тени */
+    width: 408px;
+    min-height: 584px;
     border-radius: 4px;
-    /* ТЗ: radius */
-    padding: 72px 24px 24px 24px;
-    /* ТЗ: внутренние отступы */
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    /* ТЗ: анимация */
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+        background-color: #FCFCFC;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 24px;
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 72px 24px 24px 24px;
+        /* margin-bottom: 8px; */
+
+        
 }
 
-/* КНОПКА ЗАКРЫТИЯ */
+.modal-close-icon {
+    fill: #2E2F42;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
+}
+
+.modal-close-icon:hover,
+.modal-close-icon:focus {
+fill: #ffffff
+}
+
+
 .modal-close {
-    position: absolute;
-    /* ТЗ: position: absolute */
-    top: 24px;
-    /* ТЗ */
-    right: 24px;
-    /* ТЗ */
-    width: 24px;
-    /* ТЗ */
-    height: 24px;
-    /* ТЗ */
-    border-radius: 50%;
-    /* ТЗ */
     display: flex;
-    /* ТЗ */
     align-items: center;
-    /* ТЗ */
     justify-content: center;
-    /* ТЗ */
-    background-color: #e7e9fc;
-    /* ТЗ */
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    /* ТЗ */
-    padding: 0;
-    /* ТЗ */
-    cursor: pointer;
-    /* ТЗ */
-    transition:
-        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    /* ТЗ */
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        background-color: #E7E9FC;
+        padding: 0;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* Ховер/фокус по кнопке (B5) */
+   
 .modal-close:hover,
 .modal-close:focus {
     background-color: #404bbf;
-    /* ТЗ: hover bg */
+    
     border: none;
-    /* ТЗ: hover border: none */
 }
 
-/* ИКОНКА КРЕСТИКА В КНОПКЕ */
-.modal-close-icon {
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    /* ТЗ */
-    fill: #2e2f42;
-}
+   .modal-close:hover .modal-close-icon,
+   .modal-close:focus .modal-close-icon {
+       fill: #ffffff;
+   }
+            
 
-/* Иконка белеет при hover/focus на кнопке (ТЗ) */
-.modal-close:hover .modal-close-icon,
-.modal-close:focus .modal-close-icon {
-    fill: #ffffff;
-}
-
-/* ЗАГОЛОВОК/ПАРАГРАФ В МОДАЛКЕ */
 .modal-text {
     margin: 0 0 16px;
     font-weight: 500;
-    /* ТЗ */
-    font-size: 16px;
-    /* ТЗ */
-    line-height: 1.5;
-    /* ТЗ */
-    text-align: center;
-    /* ТЗ */
-    letter-spacing: 0.02em;
-    /* ТЗ */
-    color: var(--title-color, #2e2f42);
-    /* ТЗ: через css-переменную со значением #2E2F42 */
-    min-width: 360px;
+        font-size: 16px;
+    
+        /* line-height: 24px; */
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        text-align: center;
+        color: #2E2F42;
+        text-align: center;
+        min-width: 360px;
+        /* margin-top: 72px;
+        margin-bottom: 16px; */
+
+
 }
 
-/* ФОРМА И ПОЛЯ */
-.modal-form {}
 
-/* Обёртка блока поля формы */
+
 .modal-field {
     margin-bottom: 8px;
-    /* ТЗ */
 }
 
-/* LABEL */
 .modal-input-label {
-    display: block;
-    /* ТЗ */
-    margin-bottom: 4px;
-    /* ТЗ */
+    display: inline-block;
     font-size: 12px;
-    /* ТЗ */
-    line-height: 1.17;
-    /* ТЗ */
+
     letter-spacing: 0.04em;
-    /* ТЗ */
-    color: var(--muted, #8e8f99);
-    /* ТЗ: через css-переменную со значением #8E8F99 */
+    color: #8E8F99;
+    margin-bottom: 4px;
+    line-height: 1.17;
+    display: block;
+
 }
 
-/* Контейнер для input и иконки */
 .input-wraper {
     position: relative;
-    /* ТЗ: relative */
-    /* без рамки здесь — рамка у самого input по ТЗ */
+    border: 1px solid rgba(46, 47, 66, 0.4);
 }
-
-/* INPUT */
 .modal-input {
     width: 100%;
-    /* ТЗ */
     height: 40px;
-    /* ТЗ */
-    padding-left: 38px;
-    /* ТЗ */
-    padding-right: 16px;
-    background-color: transparent;
-    /* ТЗ */
-    border: 1px solid rgba(46, 47, 66, 0.4);
-    /* ТЗ */
-    border-radius: 4px;
-    /* ТЗ */
-    outline: transparent;
-    /* ТЗ */
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    /* ТЗ */
+        padding-left: 38px;
+        padding-right: 16px;
+        border: 1px solid rgba(46, 47, 66, 0.4);
+        transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        
+            
+        
 }
 
-/* Общий класс-микроутилита для инпутов/текстовых полей */
 .modal-element {
+   
     width: 100%;
     background-color: transparent;
-    border-radius: 4px;
-    outline: transparent;
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+        /* border: 1px solid #D9D9D9; */
+        border-radius: 4px;
+        outline: transparent;
+            transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-/* Фокус инпута — меняем цвет рамки (D3) */
-.modal-input:focus {
-    border-color: #4d5ae5;
-    /* ТЗ */
-}
 
-/* SVG-иконка в инпуте (внутри .input-wraper) */
-.input-icon {
-    position: absolute;
-    /* ТЗ */
-    left: 16px;
-    /* ТЗ */
-    top: 50%;
-    /* ТЗ: top: 50% обязательно */
-    transform: translateY(-50%);
-    /* ТЗ */
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    /* ТЗ */
-}
-
-/* Иконка красится при фокусе на input (D3) */
-.modal-input:focus+.input-icon {
-    fill: #4d5ae5;
-    /* ТЗ */
-}
-
-/* TEXTAREA */
-.modal-field-comment {
-    margin-bottom: 16px;
 }
 
 .modal-textarea {
     width: 100%;
-    /* ТЗ */
+
     height: 120px;
-    /* ТЗ */
     padding: 8px 16px;
-    /* ТЗ */
     resize: none;
-    /* ТЗ */
     font-size: 12px;
-    /* ТЗ */
     line-height: 1.17;
-    /* ТЗ */
     letter-spacing: 0.04em;
-    /* ТЗ */
     color: rgba(46, 47, 66, 0.4);
-    /* ТЗ */
-    background-color: transparent;
-    /* ТЗ */
     border: 1px solid rgba(46, 47, 66, 0.4);
-    /* ТЗ */
     border-radius: 4px;
-    /* ТЗ */
-    outline: transparent;
-    /* ТЗ */
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    /* ТЗ */
+    background-color: transparent;
+
+
 }
 
 .modal-textarea:focus {
-    border-color: #4d5ae5;
-    /* ТЗ */
+border-color: #4D5AE5;
+}
+    
+    
+
+.modal-input:focus {
+    border-color: #4D5AE5;
 }
 
-/* ЧЕКБОКС + ЛЕЙБЛ */
-.modal-field-privacy {
+.modal-input:focus+.input-icon {
+    fill: #4D5AE5;
+}
+
+
+
+
+
+
+
+.modal-field-comment {
+    margin-bottom: 16px;
+}
+    .modal-field-privacy {
+        margin-bottom: 24px;
+    }
+
+
+
+
+
+.input-icon {
+    position: absolute;
+    top: 50%;
+   left: 16px;
+    transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+            
+
+ 
+    
+}
+
+
+
+
+
+.modal-check {
     margin-bottom: 24px;
+    width: 100%;
 }
+  .modal-check:checked  + .modal-check-label > .modal-check-box {
+   background-color: #404BBF;
+border: none;
+fill: #F4F4FD;
+  }
 
-/* ТЗ */
+    
+  
+        .modal-check-label {
+            font-size: 12px;
+            line-height: 1.17;
+            letter-spacing: .04em;
+            color: #8E8F99;
+        }
 
-.modal-check.visually-hidden {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    margin: -1px !important;
-    border: 0 !important;
-    padding: 0 !important;
-    white-space: nowrap !important;
-    clip-path: inset(100%) !important;
-    clip: rect(0 0 0 0) !important;
-    overflow: hidden !important;
-}
+    .modal-check-box {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        border-radius: 2px;
+       
+            margin-right: 8px;
+            background-color: transparent;
+            transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            fill: transparent;
+            border: 1px solid rgba(46, 47, 66, 0.4);
+            transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-/* Подпись к чекбоксу */
-.modal-check-label {
-    font-size: 12px;
-    /* ТЗ */
-    line-height: 1.17;
-    /* ТЗ */
-    letter-spacing: 0.04em;
-    /* ТЗ */
-    color: var(--muted, #8e8f99);
-    /* ТЗ */
-}
-
-/* Кастомный бокс чекбокса */
-.modal-check-box {
-    display: inline-flex;
-    /* ТЗ */
-    align-items: center;
-    /* ТЗ */
-    justify-content: center;
-    /* ТЗ */
-    width: 16px;
-    /* ТЗ */
-    height: 16px;
-    /* ТЗ */
-    border: 1px solid rgba(46, 47, 66, 0.4);
-    /* ТЗ */
-    border-radius: 2px;
-    /* ТЗ */
-    margin-right: 8px;
-    background-color: transparent;
-    fill: transparent;
-    /* ТЗ */
-    transition:
-        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    /* ТЗ */
-}
-
-/* Галочка в боксе */
-.check-icon {
-    width: 10px;
-    height: 8px;
-}
-
-/* Состояние checked — фон/границы/заливка по ТЗ (D5) */
-.modal-check:checked+.modal-check-label>.modal-check-box {
-    background-color: var(--accent, #404bbf);
-    /* ТЗ */
-    border: none;
-    /* ТЗ */
-    fill: var(--light, #f4f4fd);
-    /* ТЗ */
-}
-
-/* ССЫЛКА "Privacy Policy" */
+    }
 .modal-link {
-    color: var(--primary, #4d5ae5);
-    /* ТЗ */
+    color: #4D5AE5;
     text-decoration: underline;
     text-underline-offset: 3px;
 }
+    .modal-btn {
+        display: block;
+            margin: 0 auto;
+            min-width: 169px;
+            height: 56px;
+            padding: 16px 32px;
+        
+            font: inherit;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.04em;
+            color: #ffffff;
+        
+            background-color: #4d5ae5;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        
+            transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    
+                .modal-btn:hover,
+                .modal-btn:focus {
+                    background-color: #404bbf;
+                }
 
-/* КНОПКА ОТПРАВКИ */
-.modal-btn {
-    display: block;
-    /* ТЗ */
-    min-width: 169px;
-    /* ТЗ */
-    height: 56px;
-    /* ТЗ */
-    margin: 0 auto;
-    padding: 16px 32px;
-    font-family: "Roboto", sans-serif;
-    /* ТЗ */
-    font-weight: 500;
-    /* ТЗ */
-    font-size: 16px;
-    /* ТЗ */
-    line-height: 1.5;
-    /* ТЗ */
-    letter-spacing: 0.04em;
-    /* ТЗ */
-    color: #ffffff;
-    /* ТЗ */
-    background-color: #4d5ae5;
-    /* ТЗ */
-    border: none;
-    /* ТЗ */
-    border-radius: 4px;
-    cursor: pointer;
-    /* ТЗ */
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    /* ТЗ */
-}
-
-/* Hover/Focus для кнопки отправки (D6) */
-.modal-btn:hover,
-.modal-btn:focus {
-    background-color: #404bbf;
-    /* ТЗ */
+.check-icon {
+    top : 50%;
 }
