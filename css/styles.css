@@ -816,7 +816,7 @@ fill: #F4F4FD;
     
   
         .modal-check-label {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             font-size: 12px;
             line-height: 1.17;
