@@ -807,6 +807,9 @@ border-color: #4D5AE5;
 }
 
 
+.modal-check {
+    margin-bottom: 24px;
+}
   .modal-check:checked  + .modal-check-label > .modal-check-box {
    background-color: #404BBF;
 border: none;
@@ -816,7 +819,6 @@ fill: #F4F4FD;
     
   
         .modal-check-label {
-            display: inline-flex;
             align-items: center;
             font-size: 12px;
             line-height: 1.17;
