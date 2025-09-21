@@ -779,17 +779,20 @@ border-color: #4D5AE5;
 }
 
 .modal-field {
-    margin-bottom: 24px;
+    margin-bottom: 8px;
 
 }
 
 .modal-field-comment {
     margin-bottom: 16px;
+    .modal-field-privacy {
+        margin-bottom: 24px;
+    }
 }
 .input-wraper {
     position: relative;
     border: 1px solid rgba(46, 47, 66, 0.4);
-    margin-bottom: 8px;
+   
 
 }
 
